@@ -17,33 +17,18 @@ const styles = StyleSheet.create({
     },
     button: {
         marginHorizontal: 5,
-        borderRadius: 50,
+        borderRadius: 10,
+        borderColor: `${colors.surface}`,
         paddingHorizontal: 3,
     },
     buttonText: {
         fontSize: 11,
-        color: "gray",
+        color: `${colors.text}`,
     },
 });
 
-// iterating through the available categories to form buttons
-const categoriesArray = categories.map((type, i) => (
-    <Button
-        key={i}
-        style={styles.button}
-        labelStyle={styles.buttonText}
-        mode="outlined"
-        color={colors.primary}
-        onPress={() => console.log("Pressed")}
-        title={type}
-        compact={true}
-    >
-        {type}
-    </Button>
-));
-
 // Category component
-const Category = () => {
+const Category = ({ handleCategory }) => {
     return (
         <View style={styles.container}>
             <ScrollView
@@ -51,7 +36,22 @@ const Category = () => {
                 horizontal={true}
                 contentContainerStyle={styles.scrollView}
             >
-                {categoriesArray}
+                {categories.map((type, i) => {
+                    return (
+                        <Button
+                            key={i}
+                            style={styles.button}
+                            labelStyle={styles.buttonText}
+                            mode="outlined"
+                            color={colors.primary}
+                            onPress={() => handleCategory(type)}
+                            title={type}
+                            compact={true}
+                        >
+                            {type}
+                        </Button>
+                    );
+                })}
             </ScrollView>
         </View>
     );

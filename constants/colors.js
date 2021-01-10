@@ -8,12 +8,12 @@
 // backdrop - color for backdrops of various components such as modals.
 
 export const colors = {
-    primary: "#f5cb42",
-    accent: "#f3ccdd",
-    background: "#ffffff",
-    surface: "#ffffff",
-    text: "#ffffff",
+    primary: "#3d3d47",
+    accent: "#676778",
+    background: "#a7a7b8",
+    surface: "#dedede",
+    text: "#dedede",
     disabled: "#ffffff",
     placeholder: "#ffffff",
-    backdrop: "#ffffff",
+    backdrop: "#1f1f21",
 };
