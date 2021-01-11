@@ -1,12 +1,13 @@
 import * as React from "react";
 import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
+import { TouchableRipple } from "react-native-paper";
 import { colors } from "../constants/colors";
 
 // style object for the ImageRest component
 const styles = StyleSheet.create({
     container: {
         marginBottom: 7,
-        marginTop: 3,
+        marginTop: 25,
         backgroundColor: `${colors.backdrop}`,
     },
     text: {
@@ -27,8 +28,6 @@ const styles = StyleSheet.create({
     },
 });
 
-const anArray = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-
 // ImageContainer Component
 const ImageContainer = ({ imgData }) => {
     return (
@@ -38,11 +37,18 @@ const ImageContainer = ({ imgData }) => {
             contentContainerStyle={styles.imgContainer}
         >
             {imgData.map((item) => (
-                <Image
-                    style={styles.img}
+                <TouchableRipple
                     key={item.id}
-                    source={{ uri: `${item.webformatURL}` }}
-                />
+                    onPress={() => console.log("Pressed")}
+                    rippleColor="#000000"
+                    borderless={true}
+                >
+                    <Image
+                        style={styles.img}
+                        key={item.id}
+                        source={{ uri: `${item.webformatURL}` }}
+                    />
+                </TouchableRipple>
             ))}
         </ScrollView>
     );
@@ -50,15 +56,10 @@ const ImageContainer = ({ imgData }) => {
 
 // ImageResult Component
 const ImageResult = ({ imgArr }) => {
-    const firstImgRow = imgArr.splice(0, imgArr.length / 3);
-    const secondImgRow = imgArr.splice(
-        imgArr.length / 3,
-        imgArr.length / 3 + imgArr.length / 3
-    );
-    const thirdImgRow = imgArr.splice(
-        imgArr.length / 3 + imgArr.length / 3,
-        imgArr.length / 3 + imgArr.length / 3 + imgArr.length / 3
-    );
+    const imgsInOneRow = imgArr.length / 3;
+    const firstImgRow = imgArr.slice(0, imgsInOneRow);
+    const secondImgRow = imgArr.slice(imgsInOneRow, 2 * imgsInOneRow);
+    const thirdImgRow = imgArr.slice(2 * imgsInOneRow, 3 * imgsInOneRow);
 
     return (
         <View style={styles.container}>

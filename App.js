@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import { ScrollView, StyleSheet, Text, View } from "react-native";
 import { Searchbar } from "react-native-paper";
 import { colors } from "./constants/colors";
-import Category from "./components/Category";
 import ImageResult from "./components/ImageResult";
 import TopBar from "./components/TopBar";
 
@@ -31,14 +30,13 @@ const styles = StyleSheet.create({
 export default function App() {
     // ----------- State Management ----------------
     const [queryValue, setQueryValue] = useState("");
-    const [categoryValue, setCategoryValue] = useState("");
     const [imgArr, setImgArr] = useState([]);
 
     useEffect(() => {
         async function fetchData() {
             try {
                 const data = await fetch(
-                    `https://pixabay.com/api/?key=12631229-fef6f39bd3564e30b7b9baa1a&q=boys&${categoryValue}&image_type=all&per_page=25`
+                    `https://pixabay.com/api/?key=12631229-fef6f39bd3564e30b7b9baa1a&q=colors&&image_type=all&per_page=24`
                 );
                 const dataJSON = await data.json();
                 setImgArr(dataJSON.hits);
@@ -53,18 +51,13 @@ export default function App() {
         setQueryValue(query);
     };
 
-    const handleCateogryChange = (value) => {
-        setCategoryValue(value);
-    };
-
     const handleSearch = async () => {
         try {
             const data = await fetch(
-                `https://pixabay.com/api/?key=12631229-fef6f39bd3564e30b7b9baa1a&q=${queryValue}&category=${categoryValue}&image_type=all&per_page=25`
+                `https://pixabay.com/api/?key=12631229-fef6f39bd3564e30b7b9baa1a&q=${queryValue}&image_type=all&per_page=24`
             );
             const dataJSON = await data.json();
             setImgArr(dataJSON.hits);
-            setCategoryValue("");
         } catch {
             console.log(error);
         }
@@ -84,7 +77,6 @@ export default function App() {
                     value={queryValue}
                     onSubmitEditing={handleSearch}
                 />
-                <Category handleCategory={handleCateogryChange} />
                 <ImageResult imgArr={imgArr} />
             </ScrollView>
         </View>
