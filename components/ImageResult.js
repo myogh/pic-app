@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
 });
 
 // ImageContainer Component
-const ImageContainer = ({ imgData }) => {
+const ImageContainer = ({ imgData, navigation, loading }) => {
     return (
         <ScrollView
             showsHorizontalScrollIndicator={false}
@@ -39,14 +39,18 @@ const ImageContainer = ({ imgData }) => {
             {imgData.map((item) => (
                 <TouchableRipple
                     key={item.id}
-                    onPress={() => console.log("Pressed")}
+                    onPress={() => navigation.navigate("Profile", { imgData: item })}
                     rippleColor="#000000"
                     borderless={true}
                 >
                     <Image
                         style={styles.img}
                         key={item.id}
-                        source={{ uri: `${item.webformatURL}` }}
+                        source={
+                            loading
+                                ? require("../assets/loadingimg.jpg")
+                                : { uri: `${item.webformatURL}` }
+                        }
                     />
                 </TouchableRipple>
             ))}
@@ -55,7 +59,7 @@ const ImageContainer = ({ imgData }) => {
 };
 
 // ImageResult Component
-const ImageResult = ({ imgArr }) => {
+const ImageResult = ({ imgArr, navigation, loading }) => {
     const imgsInOneRow = imgArr.length / 3;
     const firstImgRow = imgArr.slice(0, imgsInOneRow);
     const secondImgRow = imgArr.slice(imgsInOneRow, 2 * imgsInOneRow);
@@ -64,9 +68,21 @@ const ImageResult = ({ imgArr }) => {
     return (
         <View style={styles.container}>
             <Text style={styles.text}>Discovered images</Text>
-            <ImageContainer imgData={firstImgRow} />
-            <ImageContainer imgData={secondImgRow} />
-            <ImageContainer imgData={thirdImgRow} />
+            <ImageContainer
+                imgData={firstImgRow}
+                navigation={navigation}
+                loading={loading}
+            />
+            <ImageContainer
+                imgData={secondImgRow}
+                navigation={navigation}
+                loading={loading}
+            />
+            <ImageContainer
+                imgData={thirdImgRow}
+                navigation={navigation}
+                loading={loading}
+            />
         </View>
     );
 };

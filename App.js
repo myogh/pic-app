@@ -1,84 +1,48 @@
-import { StatusBar } from "expo-status-bar";
-import React, { useEffect, useState } from "react";
-import { ScrollView, StyleSheet, Text, View } from "react-native";
-import { Searchbar } from "react-native-paper";
+import "react-native-gesture-handler";
+import React from "react";
+import Home from "./screens/Home";
+import { NavigationContainer } from "@react-navigation/native";
+import Profile from "./screens/Profile";
+import { createStackNavigator } from "@react-navigation/stack";
+import { StyleSheet } from "react-native";
 import { colors } from "./constants/colors";
-import ImageResult from "./components/ImageResult";
-import TopBar from "./components/TopBar";
+import { color } from "react-native-reanimated";
+import { Provider as PaperProvider } from "react-native-paper";
 
-// style object for the app component
+const Stack = createStackNavigator();
+
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: `${colors.backdrop}`,
-    },
-    scrollView: {
-        justifyContent: "flex-start",
-    },
-    searchbar: {
-        marginHorizontal: 10,
-        marginTop: 150,
-        backgroundColor: `${colors.accent}`,
-    },
-    searchText: {
-        color: `${colors.text}`,
-        fontSize: 16,
+    header: {
+        height: 130,
     },
 });
-
 // main App component
 export default function App() {
-    // ----------- State Management ----------------
-    const [queryValue, setQueryValue] = useState("");
-    const [imgArr, setImgArr] = useState([]);
-
-    useEffect(() => {
-        async function fetchData() {
-            try {
-                const data = await fetch(
-                    `https://pixabay.com/api/?key=12631229-fef6f39bd3564e30b7b9baa1a&q=colors&&image_type=all&per_page=24`
-                );
-                const dataJSON = await data.json();
-                setImgArr(dataJSON.hits);
-            } catch {
-                console.log(error);
-            }
-        }
-        fetchData();
-    }, []);
-
-    const onChangeSearch = (query) => {
-        setQueryValue(query);
-    };
-
-    const handleSearch = async () => {
-        try {
-            const data = await fetch(
-                `https://pixabay.com/api/?key=12631229-fef6f39bd3564e30b7b9baa1a&q=${queryValue}&image_type=all&per_page=24`
-            );
-            const dataJSON = await data.json();
-            setImgArr(dataJSON.hits);
-        } catch {
-            console.log(error);
-        }
-    };
-    // ------------- Rendering the elements -----------
     return (
-        <View style={styles.container}>
-            <StatusBar style="auto" backgroundColor={colors.accent} />
-            <TopBar />
-            <ScrollView contentContainerStyle={styles.scrollView}>
-                <Searchbar
-                    placeholder="Search for images..."
-                    onChangeText={onChangeSearch}
-                    style={styles.searchbar}
-                    inputStyle={styles.searchText}
-                    iconColor={`${colors.text}`}
-                    value={queryValue}
-                    onSubmitEditing={handleSearch}
-                />
-                <ImageResult imgArr={imgArr} />
-            </ScrollView>
-        </View>
+        <PaperProvider>
+            <NavigationContainer>
+                <Stack.Navigator
+                    headerMode="screen"
+                    mode="card"
+                    screenOptions={{
+                        headerStyle: {
+                            height: 130,
+                            backgroundColor: colors.backdrop,
+                        },
+                        headerTintColor: "#fff",
+                        headerTitleStyle: {
+                            color: colors.text,
+                        },
+                    }}
+                >
+                    <Stack.Screen
+                        name="Pictour"
+                        component={Home}
+                        options={{ headerShown: false }}
+                    />
+                    <Stack.Screen name="Profile" component={Profile} />
+                </Stack.Navigator>
+            </NavigationContainer>
+        </PaperProvider>
     );
 }
