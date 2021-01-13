@@ -20,7 +20,7 @@ expo start
 
 ## Opening the app on your phone/tablet - Source: [Expo](https://docs.expo.io/get-started/create-a-new-app/#opening-the-app-on-your-phonetablet)
 - 🍎 On your iPhone or iPad, open the default Apple "Camera" app and scan the QR code you see in the terminal or in Expo Dev Tools.
-- 🤖 On your Android device, press "Scan QR Code" on the "Projects" tab of the Expo client app and scan the QR code you see in the terminal or in Expo Dev Tools.
+- 🤖 On your Android device, press "Scan QR Code" on the "Projects" tab of the [Expo client app](https://play.google.com/store/apps/details?id=host.exp.exponent&hl=en&gl=US) and scan the QR code you see in the terminal or in Expo Dev Tools.
 
 ## Demo
 - A practical demonstartion of this app can be found [here](https://drive.google.com/file/d/12V1RHAZCt5Bv1th9qRCcYxNvdSWGBnMy/view?usp=sharing).
