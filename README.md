@@ -18,7 +18,7 @@ expo start
 ```
 > This will start the Metro Bundler, which is an HTTP server that compiles the JavaScript code of the app using Babel and serves it to the Expo app. 
 
-## Opening the app on your phone/tablet - Source: [Expo](https://docs.expo.io/get-started/create-a-new-app/#opening-the-app-on-your-phonetablet)
+## Opening the app on your phone - Source: [Expo](https://docs.expo.io/get-started/create-a-new-app/#opening-the-app-on-your-phonetablet)
 - 🍎 On your iPhone or iPad, open the default Apple "Camera" app and scan the QR code you see in the terminal or in Expo Dev Tools.
 - 🤖 On your Android device, press "Scan QR Code" on the "Projects" tab of the [Expo client app](https://play.google.com/store/apps/details?id=host.exp.exponent&hl=en&gl=US) and scan the QR code you see in the terminal or in Expo Dev Tools.
 
