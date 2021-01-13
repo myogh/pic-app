@@ -1,6 +1,4 @@
 # Pictour - Image Browsing App
-
-## Description
 Pictour is a react native app which lets your browse images using different keywords. 
 The project was developed using the [Expo](https://expo.io/) framework and all the image data are fetched from the [Pixabay](https://pixabay.com/api/docs/) api.
 
