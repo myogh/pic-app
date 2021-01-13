@@ -3,7 +3,7 @@ import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
 import { TouchableRipple } from "react-native-paper";
 import { colors } from "../constants/colors";
 
-// style object for the ImageRest component
+// style object for the ImageResult component
 const styles = StyleSheet.create({
     container: {
         marginBottom: 7,
@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
     },
 });
 
-// ImageContainer Component
+// ImageContainer subcomponent
 const ImageContainer = ({ imgData, navigation, loading }) => {
     return (
         <ScrollView
@@ -48,7 +48,7 @@ const ImageContainer = ({ imgData, navigation, loading }) => {
                         key={item.id}
                         source={
                             loading
-                                ? require("../assets/loadingimg.jpg")
+                                ? require("../assets/loading.jpg")
                                 : { uri: `${item.webformatURL}` }
                         }
                     />

@@ -1,12 +1,12 @@
 import { StatusBar } from "expo-status-bar";
-import React, { useEffect, useState } from "react";
+import * as React from "react";
 import { Dimensions, Image, ScrollView, StyleSheet, Text, View } from "react-native";
 import { colors } from "../constants/colors";
 import { Avatar, Button } from "react-native-paper";
 
 const { width, height } = Dimensions.get("window");
 
-// style object for the app component
+// style object for the profile component
 const styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
     },
 });
 
-// main App component
+// Profile screen component
 export default function Profile({ route }) {
     // ------------- Rendering the elements -----------
     return (

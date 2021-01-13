@@ -6,7 +6,6 @@ import Profile from "./screens/Profile";
 import { createStackNavigator } from "@react-navigation/stack";
 import { StyleSheet } from "react-native";
 import { colors } from "./constants/colors";
-import { color } from "react-native-reanimated";
 import { Provider as PaperProvider } from "react-native-paper";
 
 const Stack = createStackNavigator();
@@ -16,6 +15,7 @@ const styles = StyleSheet.create({
         height: 130,
     },
 });
+
 // main App component
 export default function App() {
     return (

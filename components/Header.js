@@ -3,6 +3,7 @@ import { Appbar } from "react-native-paper";
 import { Image, StyleSheet } from "react-native";
 import { colors } from "../constants/colors";
 
+// style object for the Header component
 const styles = StyleSheet.create({
     headerContainer: {
         position: "absolute",
@@ -26,6 +27,7 @@ const styles = StyleSheet.create({
     },
 });
 
+// App header component
 const Header = ({ openDialog }) => {
     return (
         <Appbar style={styles.headerContainer}>
