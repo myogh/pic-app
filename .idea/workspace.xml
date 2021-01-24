@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6be4e38b-2709-48fd-a2dc-934f875187fa" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1nSLq4kPernD3BG62RMIxMvNeFw" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6be4e38b-2709-48fd-a2dc-934f875187fa" name="Default Changelist" comment="" />
+      <created>1611378732819</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1611378732819</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="166" y="100" width="1270" height="664" key="AVDManager" timestamp="1611380320977">
+      <screen x="66" y="0" width="1470" height="864" />
+    </state>
+    <state x="166" y="100" width="1270" height="664" key="AVDManager/66.0.1470.864@66.0.1470.864" timestamp="1611380320977" />
+    <state x="310" y="77" key="SettingsEditor" timestamp="1611379690019">
+      <screen x="66" y="0" width="1470" height="864" />
+    </state>
+    <state x="310" y="77" key="SettingsEditor/66.0.1470.864@66.0.1470.864" timestamp="1611379690019" />
+  </component>
+</project>
